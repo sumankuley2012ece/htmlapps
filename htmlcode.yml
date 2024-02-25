@@ -1,21 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: appsv1
+kind: Pod
 metadata:
-  name: customimage1-deployment
+  name: customimage1
   labels:
     app: customimage1
-
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: customimage1
-  template:
-    metadata:
-      labels:
-        app: customimage1
-
-    spec:
+  spec:
       containers:
       - name: customimage1
         image: skycloud.azurecr.io/htmlcode:v1
